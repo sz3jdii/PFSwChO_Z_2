@@ -3,7 +3,7 @@ name: Docker Build Single
 on: [push]
 
 env:
-  CACHE_IMAGE: sz3jdii/PFSwChOZ2
+  CACHE_IMAGE: sz3jdii/pfswchoz2
   DOCKER_BUILDKIT: 1
 
 jobs:
