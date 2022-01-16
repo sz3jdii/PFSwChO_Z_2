@@ -17,6 +17,15 @@ jobs:
         uses: actions/checkout@v1
       - name: Log in to docker hub
         run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Run Qemu
+        run: |
+          docker buildx create --name mybuilder
+      - name: Select Qemu
+        run: |
+          docker buildx use mybuilder
+      - name: Bootstrap Qemu
+        run: |
+          docker buildx inspect --bootstrap
       - name: Build from dockerfile
         run: |
           docker buildx build \
