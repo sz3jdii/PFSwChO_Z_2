@@ -1,4 +1,4 @@
-name: Docker Build Multi-Platform z2
+name: Docker Build Multi-platform z2
 
 on: [push]
 
@@ -33,5 +33,4 @@ jobs:
             --cache-from $CACHE_IMAGE:latest \
             --tag $CACHE_IMAGE:latest \
             --build-arg BUILDKIT_INLINE_CACHE=1 \
-            --push
             "."
