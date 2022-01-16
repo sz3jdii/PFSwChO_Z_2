@@ -18,6 +18,7 @@ jobs:
       - name: Build from dockerfile
         run: |
           docker build \
+            --platform linux/amd64,linux/arm64,linux/i386
             --cache-from $CACHE_IMAGE:latest \
             --tag $CACHE_IMAGE:latest \
             --build-arg BUILDKIT_INLINE_CACHE=1 \
